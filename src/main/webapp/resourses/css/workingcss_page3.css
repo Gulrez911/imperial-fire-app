@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.w4-2 {
+        padding-top: 70px
+}
+
+.main {
+        margin: 0px auto;
+        padding: 0px 0px 0px 0px;
+        width: 1200px;
+}
+
+.inner_txt {
+        padding: 20px 0px 20px 0px;
+}
+
+.prod-grid-view-main {
+        width: 100%;
+        margin: 20px 0 0;
+        padding: 0;
+        background: #fff;
+}
+
+.prod-grid-view-main .container {
+        max-width: 1500px;
+        padding: 0 10px;
+        margin: 0 auto;
+}
+
+.prod-grid-view-main .prod-list-view {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+}
+
+.prod-grid-view-main .prod-list-view .prod {
+        display: block;
+        width: 48%;
+        padding: 15px;
+        box-shadow: 0 0 5px grey;
+        margin: 0 0 25px;
+}
+
+.prod-grid-view-main .prod-list-view .prod h2 {
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        color: #2980b9;
+        font-weight: 500;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 0 0 22px;
+        text-align: left;
+}
+
+.prod-grid-view-main .prod-list-view .prod h2 a {
+        color: #032cc0;
+        text-transform: capitalize;
+        font-size: 24px;
+        font-weight: 400;
+}
+
+a {
+        text-decoration: none;
+}
+
+.prod-grid-view-main .prod-list-view .prod .top-section {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        margin: 0 0 10px;
+        flex-wrap: wrap;
+}
+
+.prod-grid-view-main .prod-list-view .prod .top-section .img-section {
+        width: 250px;
+        margin: 0 15px 0 0;
+}
+
+.img-section {
+        float: right;
+
+}
+
+.prod-grid-view-main .prod-list-view .prod .top-section .prod-details-section-main {
+        width: calc(100% - 266px);
+}
+
+.prod-grid-view-main .prod-list-view .prod .custom-field-section {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+}
+
+.prod-grid-view-main .prod-list-view .prod .custom-field-section ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+}
+
+ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+}
+
+.prod-grid-view-main .prod-list-view .prod .custom-field-section ul li {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px;
+        color: #666;
+        font-size: 16px;
+}
+
+.prod-grid-view-main .prod-list-view .prod .custom-field-section ul li strong {
+        font-weight: 400;
+        color: #000;
+        margin: 0 5px 0 0;
+        display: inline-block;
+        vertical-align: top;
+        width: 35%;
+}
+
+.prod-grid-view-main .prod-list-view .prod .custom-field-section ul li i {
+        display: inline-block;
+        width: 62%;
+        font-style: normal;
+}
+
+.prod-grid-view-main .prod-list-view .prod .price-section {
+        width: 100%;
+        display: flex;
+        margin: 4px 0 15px;
+        justify-content: end;
+}
+
+.prod-grid-view-main .prod-list-view .prod .price-section .price {
+        display: inline-block;
+        width: calc(100% - 266px);
+        color: #000;
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0 0 5px;
+        vertical-align: top;
+}
+
+.prod-grid-view-main .prod-list-view .prod .btn-section {
+        display: block;
+        width: calc(100% - 266px);
+        text-align: left;
+        float: right;
+}
+
+.prod-grid-view-main .prod-list-view .prod .price-section .price {
+        display: inline-block;
+        width: calc(100% - 266px);
+        color: #000;
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0 0 5px;
+        vertical-align: top;
+}
+
+.prod-grid-view-main .prod-list-view .prod .btn-section {
+        display: block;
+        width: calc(100% - 266px);
+        text-align: left;
+        float: right;
+}
+
+.prod-grid-view-main .prod-list-view .prod .btn-section a {
+        display: inline-block;
+        background: #ad0808;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 17px;
+        padding: 13px 30px;
+        border-radius: 3px;
+}
+
+.prod-grid-view-main .prod-list-view .prod .top-section .img-section img {
+        width: auto;
+        max-width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-section .btn-secondary:hover {
+    background: #ad0808;
+    color: #fff;
+}
+.btn-section .btn-secondary {
+    background: transparent;
+    color: #ad0808;
+    border: 1px solid #ad0808;
+}
+
+
+.inner_txt .cat h2 {
+	text-align: center;
+	padding: 15px
+}
+
+
+
