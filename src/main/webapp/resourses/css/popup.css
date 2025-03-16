@@ -1,0 +1,504 @@
+.catModel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background: rgba(0, 0, 0, .5);
+}
+
+.catModel .popupMainCnt {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.catModel .popupMainCnt .popupContent {
+	width: 678px;
+	background-color: #fff;
+	position: relative;
+	padding: 40px 75px;
+}
+
+.catModel .popupMainCnt .popupContent .catModelClose {
+	top: 15px;
+	right: 12px;
+	position: absolute;
+	text-align: center;
+	width: 32px;
+	height: 32px;
+	font-weight: 300;
+	line-height: 26px;
+	font-size: 28px;
+	color: #1e2d7c;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.mcModalPopupBox .mcTitleModalPopup {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 36px;
+	margin-bottom: 15px;
+	color: #000;
+}
+
+.mcSendInqPro {
+	width: 100%;
+	border-radius: 8px;
+	background-color: #FFEEEE;
+	border: solid 1px #CBCED5;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mcSendInqPro .mcImgCnt {
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+	background-color: #fff;
+	border: solid 1px #CBCED5;
+}
+
+.mcSendInqPro .mcImgCnt img {
+	border-radius: 8px;
+}
+
+.mcSendInqPro .mcInfoCnt {
+	width: calc(100% - 60px);
+}
+
+.mcSendInqPro .mcInfoCnt .mcProName {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mcSendInqPro .mcInfoCnt .mcProPrice {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+}
+
+.mcFormDetailCnt .mcFormGroup {
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.mcFormDetailCnt .formLabel {
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 10px;
+	display: block;
+	margin-top: 10px;
+}
+
+.mcCol2 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt {
+	position: relative;
+}
+
+.mcCol2 .mcFormCnt {
+	width: calc(50% - 8px);
+}
+
+.mcModalPopupBox .mcFormDetailCnt .mcFormGroup .mcFormCnt input[type=text]
+	{
+	border: solid 1px #CBD5E1;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt input[type=text] {
+	background-color: #fff;
+	border: solid 1px #CBD5E1;
+	/*     border-radius: 8px; */
+	line-height: 31px;
+	height: 50px;
+	font-size: 14px;
+	padding: 20px 15px 5px 15px !important;
+	width: 100%;
+	color: #1A1A1A;
+	outline: none;
+}
+
+.mcFormGroup .mcFloatingLabel {
+	color: #4D4D4D;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	display: block;
+	position: absolute;
+	top: 17px;
+	left: 15px;
+	transition: 0.4s ease all;
+	pointer-events: none;
+}
+
+.mcFormGroup input:not(:focus):valid ~ .mcFloatingLabel {
+	top: 5px;
+	left: 15px;
+	padding: 0px 2px;
+	color: #959595;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt {
+	position: relative;
+}
+
+.mcCol2 .mcFormCnt {
+	width: calc(50% - 8px);
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt.selectBox select {
+	/* 	background-image: */
+	/* 		url(https://tiimg.tistatic.com/new_website1/ti-design/catalog/images/down-arrow-icon.png) */
+	/* 		!important; */
+	background-repeat: no-repeat !important;
+	background-position-x: calc(100% - 10px) !important;
+	background-position-y: 50% !important;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt.selectBox .mcFloatingLabel {
+	top: 5px;
+	color: #959595;
+}
+
+.mcFormGroup .formError {
+	margin-top: 0;
+	text-align: left;
+	font-size: 12px;
+	color: red;
+	display: none;
+}
+
+.mcFormDetailCnt .mcFormGroup {
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.mcSendInqQty {
+	display: flex;
+	margin: 0;
+	padding: 0 !important;
+}
+
+.mcSendInqQty li.active {
+	border: solid 1px #5BB4CE;
+	background-color: #E0F2F6;
+}
+
+.mcSendInqQty li.active {
+	border: solid 1px #5BB4CE;
+	background-color: #E0F2F6;
+}
+
+.mcSendInqQty li {
+	width: 52px;
+	height: 24px;
+	border-radius: 6px;
+	border: solid 1px #EEF0F3;
+	background-color: #EEF0F3;
+	padding: 5px 10px;
+	font-size: 12px;
+	text-align: center;
+	color: #404D57;
+	margin-right: 6px;
+	cursor: pointer;
+	line-height: 14px;
+}
+
+.mcFormDetailCnt .mcFormGroup {
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.mcImgCnt img {
+	width: 100%
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt {
+	position: relative;
+}
+
+.mcModalPopupBox .mcFormDetailCnt .mcFormGroup .mcFormCnt input[type=text]
+	{
+	border: solid 1px #CBD5E1;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt input[type=text] {
+	background-color: #fff;
+	border: solid 1px #CBD5E1;
+	border-radius: 8px;
+	line-height: 31px;
+	height: 50px;
+	font-size: 14px;
+	padding: 20px 15px 5px 15px !important;
+	width: 100%;
+	color: #1A1A1A;
+	outline: none;
+}
+
+.mcFormGroup input:not(:focus):valid ~ .mcFloatingLabel {
+	top: 5px;
+	left: 15px;
+	padding: 0px 2px;
+	color: #959595;
+}
+
+.mcFormGroup input:not(:focus):valid ~ .mcFloatingLabel {
+	top: 5px;
+	left: 15px;
+	padding: 0px 2px;
+	color: #959595;
+}
+
+.mcFormGroup .mcFloatingLabel {
+	font-family: "Poppins", sans-serif;
+	color: #4D4D4D;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	display: block;
+	position: absolute;
+	top: 17px;
+	left: 15px;
+	transition: 0.4s ease all;
+	pointer-events: none;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt {
+	position: relative;
+}
+
+.mcModalPopupBox .mcFormDetailCnt .mcFormGroup .mcFormCnt select {
+	border: solid 1px #CBD5E1;
+}
+
+.mcFormDetailCnt .mcFormGroup .mcFormCnt select {
+	background-color: #fff;
+	border: solid 1px #CBD5E1;
+	border-radius: 8px;
+	line-height: 31px;
+	height: 50px;
+	font-size: 14px;
+	padding: 20px 15px 5px 15px !important;
+	width: 100%;
+	color: #1A1A1A;
+	outline: none;
+}
+
+.mcFormDetailCnt .mcBtnCnt {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.mcModalPopupBox .mcFormDetailCnt .mcBtnCnt .mcBtn {
+	background: #0d6efd;
+	width: 100%;
+	width: 100%;
+}
+
+.mcFormDetailCnt .mcBtnCnt .mcBtn {
+	width: 180px;
+	text-align: center;
+	background: #0d6efd;
+	color: #fff;
+	border: 1px solid #0d6efd;
+	padding: 15px 24px;
+	height: 50px;
+	border-radius: 8px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: all 0.2s;
+	margin: 0 auto;
+}
+
+
+
+/*  step 3  */
+.mcThanksCnt {
+	text-align: center;
+}
+
+.mcThanksCnt img {
+	max-width: 100%;
+}
+
+.mcThanksCnt .mcThankTitle {
+	font-size: 22px;
+	line-height: 28px;
+	color: #000;
+	font-weight: 600;
+	margin: 15px 0;
+}
+
+.mcThanksCnt .mcThankSubTitle {
+	font-size: 14px;
+	line-height: 20px;
+	color: #000;
+	font-weight: 500;
+}
+
+.mcProductYouLike {
+	margin-top: 15px;
+	padding-top: 15px;
+	position: relative;
+}
+
+.mcProductYouLike .mcTitle {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 22px;
+	margin-bottom: 15px;
+}
+
+.mcProductYouLike .mcProdLikeList {
+	display: flex;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+/* step 2 */
+.mcFormDetailCnt .mcResendSec {
+	display: flex;
+	justify-content: space-between;
+}
+
+.mcFormDetailCnt .mcResendSec .mcQuestion {
+	font-size: 12px;
+	font-weight: 400;
+	color: #8195A5;
+	line-height: 18px;
+	font-family: "Poppins", sans-serif;
+}
+
+.mcFormDetailCnt .mcResendSec .mcResendOtp {
+	color: #1F3BD2;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	font-family: "Poppins", sans-serif;
+	cursor: pointer;
+}
+
+/* phone */
+.form-group {
+	margin-bottom: 25px;
+}
+
+.form-group .input-group {
+	position: relative;
+	display: table;
+	border-collapse: separate;
+}
+
+.input-group-addon {
+	display: table-cell;
+}
+
+.input-group .form-control {
+	display: table-cell;
+}
+
+.form-group .input-group .input-group-addon {
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	color: #555;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.fa {
+	display: inline-block;
+	/*      font: normal normal normal 14px / 1 FontAwesome;  */
+	font-size: inherit;
+	text-rendering: auto;
+}
+
+.input-group .form-control {
+	position: relative;
+	z-index: 2;
+	float: left;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* 2nd */
+input[type=tel] {
+	border: solid 1px #CBD5E1;
+}
+
+input[type=tel] {
+	background-color: #fff;
+	border: solid 1px #CBD5E1;
+	border-radius: 8px;
+	line-height: 31px;
+	height: 50px;
+	font-size: 14px;
+	padding: 20px 15px 5px 15px !important;
+	width: 100%;
+	color: #1A1A1A;
+	outline: none;
+}
+
+.input-group-addon {
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	color: #555;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.mcCol2 .mcFormCnt {
+	display: table;
+}
+
+.mcFormCnt input[type=email] {
+    background-color: #fff;
+    border: solid 1px #CBD5E1;
+    border-radius: 8px;
+    line-height: 31px;
+    height: 50px;
+    font-size: 14px;
+    padding: 20px 15px 5px 15px !important;
+    width: 100%;
+    color: #1A1A1A;
+    outline: none;
+}

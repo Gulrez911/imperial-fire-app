@@ -29,5 +29,8 @@ public class PropertyConfig {
 	String fileServerLocation;
 	@Value("${image.fileServerWebUrl}")
 	String fileServerWebUrl;
+	
+	@Value("${image.otpHtmlLcation}")
+	String otpHtmlLcation;
 
 }

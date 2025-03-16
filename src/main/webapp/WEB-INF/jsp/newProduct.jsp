@@ -178,6 +178,8 @@ body {
 				<label class="queimage" style="font-size: 18px; color: #000;"></label>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
+			<a href="#" id="cancel" onclick="window.location.href = ' /productList' " name="cancel" class="btn btn-default" style="background: #6c757d; color: white; cursor: pointer;">Cancel</a>
+			<!-- 			<button type="" class="btn btn-primary">Submit</button> -->
 		</form:form>
 	</div>
 

@@ -60,7 +60,8 @@
      </script>
 </head>
 <body>
-	<div class="navbar">
+	<nav>
+		<div class="navbar">
 
 			<!-- <i class='bx bx-menu'></i> -->
 			<label for="check"> <i class='bx bx-menu' id="check"></i></label>
@@ -91,7 +92,7 @@
 									</ul></li>
 							</c:forEach>
 						</ul></li>
-					<li><a href="#"> Company Profile</a></li>
+					<li><a href="#" onclick="window.location.href = ' /companyProfile' "> Company Profile</a></li>
 
 					<li><a href="#">CONTACT US</a></li>
 				</ul>
@@ -103,6 +104,11 @@
 				</div>
 			</div>
 		</div>
+
+
+
+
+	</nav>
 
 	<div class="w4-3">
           <div class="main">

@@ -1,22 +1,44 @@
 package com.gul.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Random;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gul.common.PropertyConfig;
 import com.gul.dto.CategoryDTO;
+import com.gul.dto.Country;
+import com.gul.dto.Mail;
 import com.gul.modal.Category;
+import com.gul.modal.OtpAuth;
 import com.gul.modal.Product;
+import com.gul.modal.RequirementPorduct;
 import com.gul.repositoy.CategoryRepository;
+import com.gul.repositoy.OtpAuthRepository;
 import com.gul.repositoy.ProductRepository;
+import com.gul.repositoy.RequirementPorductRepository;
+import com.gul.service.MailService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
@@ -27,6 +49,15 @@ public class HomeController {
 	private ProductRepository productRepository;
 	@Autowired
 	private PropertyConfig propertyConfig;
+
+	@Autowired
+	private MailService mailService;
+
+	@Autowired
+	private OtpAuthRepository authRepository;
+
+	@Autowired
+	private RequirementPorductRepository requirementPorductRepository;
 
 	@GetMapping("/home")
 	public ModelAndView admin() {
@@ -138,7 +169,7 @@ public class HomeController {
 
 //		
 		mav.addObject("listProducts", listProducts);
-		
+
 		return mav;
 	}
 
@@ -205,6 +236,149 @@ public class HomeController {
 		return mav;
 	}
 
+	@GetMapping("/country")
+	public ModelAndView country() {
+		ModelAndView mav = new ModelAndView("ajax");
+//		System.out.println(country)
+//		countDao.save(country);
+		mav.addObject("country", new Country());
+		return mav;
+	}
+
+	@PostMapping(path = "/nextstep", consumes = "application/x-www-form-urlencoded")
+	public @ResponseBody Map<String, Object> nextstep(
+			@ModelAttribute("requirementPorduct") RequirementPorduct requirementPorduct2,
+			HttpSession session) throws IOException {
+		System.out.println("okok" + requirementPorduct2.getProductName() + " "
+				+ requirementPorduct2.getUserEmail() + " " + requirementPorduct2.getImageUrl());
+		Map<String, Object> map = new HashMap<>();
+
+		session.setAttribute("productName", requirementPorduct2.getProductName());
+		session.setAttribute("productId", requirementPorduct2.getProductId());
+
+		session.setAttribute("quantity", requirementPorduct2.getQuantity());
+		session.setAttribute("additionalDetail", requirementPorduct2.getAdditionalDetail());
+		session.setAttribute("userEmail", requirementPorduct2.getUserEmail());
+		session.setAttribute("phone", requirementPorduct2.getPhone());
+
+		String email = requirementPorduct2.getUserEmail();
+		String otp = "";
+		otp = new DecimalFormat("000000").format(new Random().nextInt(999999));
+		System.out.println(otp);
+		OtpAuth otpAuth = new OtpAuth();
+		otpAuth.setOtp(otp);
+		otpAuth.setUserEmail(email);
+//		OtpAuth otpAuth2 = authRepository.findById(email);
+		OtpAuth otpAuth2 = authRepository.findByUserEmail(email);
+		if (otpAuth2 != null) {
+			authRepository.deleteById(otpAuth2.getId());
+
+		} else {
+			authRepository.save(otpAuth);
+		}
+		Mail mail = new Mail();
+		mail.setMailFrom("gulfarooqui1@gmail.com");
+		mail.setMailTo(email);
+		mail.setMailSubject("Imperial Safety Services");
+
+		String loction = propertyConfig.getOtpHtmlLcation();
+		String html = FileUtils.readFileToString(new File(loction), StandardCharsets.UTF_8.name());
+//		String html2 = FileUtils.readFileToString(new File(loction));
+//		User user = (User) request.getSession().getAttribute("user");
+//		 Test test = (Test) request.getSession().getAttribute("test");
+		html = html.replace("{otp}", otp);
+
+		mail.setMailContent(html);
+		mailService.sendEmail(mail);
+		map.put("email", email);
+		return map;
+	}
+
+	@PostMapping(path = "/confirmOtp", consumes = "application/x-www-form-urlencoded")
+	public @ResponseBody Map<String, Object> confirmOtp(@RequestParam(name = "email") String email2,
+			@RequestParam(name = "otp") String otp2, HttpSession session) throws IOException {
+
+		OtpAuth otpAuth2 = authRepository.findByUserEmail(email2);
+//		otpAuth2.getOtp()
+
+		Map<String, Object> map = new HashMap<>();
+
+		if (otpAuth2.getOtp().equals(otp2)) {
+			System.out.println("true");
+			map.put("check", "true");
+			map.put("email", email2);
+
+ 
+
+			String productName = (String) session.getAttribute("productName");
+			Long productId = (Long) session.getAttribute("productId");
+			Integer quantity = (Integer) session.getAttribute("quantity");
+			String additionalDetail = (String) session.getAttribute("additionalDetail");
+			String userEmail = (String) session.getAttribute("userEmail");
+			Long phone = (Long) session.getAttribute("phone");
+			
+			RequirementPorduct requirementPorduct = new RequirementPorduct();
+			requirementPorduct.setProductName(productName);
+			requirementPorduct.setProductId(productId);
+			requirementPorduct.setQuantity(quantity);
+			requirementPorduct.setAdditionalDetail(additionalDetail);
+			requirementPorduct.setUserEmail(userEmail);
+			requirementPorduct.setPhone(phone);
+
+			requirementPorductRepository.save(requirementPorduct);
+
+		} else {
+			map.put("check", "false");
+
+		}
+
+		return map;
+	}
+
+	@PostMapping(path = "/removeOtp", consumes = "application/x-www-form-urlencoded")
+	public @ResponseBody Map<String, Object> removeOtp(@RequestParam(name = "email") String email2)
+			throws IOException {
+
+//		authRepository.deleteByUserEmail(email2);
+
+		OtpAuth otpAuth = authRepository.findByUserEmail(email2);
+		authRepository.deleteById(otpAuth.getId());
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("msg", "otp deleted");
+		return map;
+	}
+
+	@PostMapping(path = "/resendOtp", consumes = "application/x-www-form-urlencoded")
+	public @ResponseBody Map<String, Object> resendOtp(@RequestParam(name = "email") String email2)
+			throws IOException {
+
+		OtpAuth otpAuth = authRepository.findByUserEmail(email2);
+		Mail mail = new Mail();
+		mail.setMailFrom("gulfarooqui1@gmail.com");
+		mail.setMailTo(email2);
+		mail.setMailSubject("Otp");
+
+		String loction = propertyConfig.getOtpHtmlLcation();
+		String html = FileUtils.readFileToString(new File(loction), StandardCharsets.UTF_8.name());
+
+		html = html.replace("{otp}", otpAuth.getOtp());
+
+		mail.setMailContent(html);
+		mailService.sendEmail(mail);
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("msg", "resend otp");
+		return map;
+	}
+
+//	@PostMapping(path = "/process", consumes = "application/x-www-form-urlencoded")
+//	public ResponseEntity<Void> saveOrUpdateCompany(@ModelAttribute("country") Country country2) {
+//		System.out.println("okok" + country2.getName() + " " + country2.getEmail() + " "
+//				+ country2.getSuperheroAlias());
+//		return new ResponseEntity<Void>(HttpStatus.OK);
+//	}
+
 //	@GetMapping("/image")
 //	@ResponseBody
 //	public ResponseEntity<byte[]> getImage() throws IOException {
@@ -244,25 +418,6 @@ public class HomeController {
 //
 //				getClass().getResourceAsStream("E:\\file-server\\images\\fruit-1218166_640.png");
 //		return ResponseEntity.ok().contentType(contentType).body(new InputStreamResource(in));
-//	}
-
-//	@GetMapping("/images")
-//	public ResponseEntity<Resource> getImage() {
-//	    try {
-//		    String destination = propertyConfig.getFileServerLocation() + File.separator;
-//	        Path filePath = Paths.get(destination).resolve("megha8shukla_20230829_p_3179915478389066891_4_3.jpg");
-//	        Resource resource = new UrlResource(filePath.toUri());
-//	        
-//	        if (resource.exists()) {
-//	            return ResponseEntity.ok()
-//	                    .contentType(MediaType.IMAGE_JPEG)
-//	                    .body(resource);
-//	        } else {
-//	            return ResponseEntity.notFound().build();
-//	        }
-//	    } catch (MalformedURLException e) {
-//	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//	    }
 //	}
 
 }

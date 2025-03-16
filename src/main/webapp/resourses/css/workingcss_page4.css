@@ -150,6 +150,9 @@
 
 .prod_cont {
         width: 100%;
+        
+        display: flow-root;
+        margin: 25px 0px;
 }
 
 .prod_img_cont {
@@ -317,7 +320,7 @@ img {
 }
 
 .other_prod_cont .more2 a {
-        background: #ad0808;
+        background: #0d6efd;
 }
 
 .more2 a {

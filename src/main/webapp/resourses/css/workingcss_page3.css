@@ -175,7 +175,7 @@ ul {
 
 .prod-grid-view-main .prod-list-view .prod .btn-section a {
         display: inline-block;
-        background: #ad0808;
+        background: #0d6efd;
         color: #fff;
         text-transform: uppercase;
         font-size: 17px;
@@ -226,15 +226,17 @@ ul {
 
 
 .btn-section .btn-secondary:hover {
-    background: #ad0808;
+    background: #0d6efd;
     color: #fff;
 }
 .btn-section .btn-secondary {
     background: transparent;
-    color: #ad0808;
-    border: 1px solid #ad0808;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
 }
-
+.btn-primary {
+	cursor: pointer;
+}
 
 .inner_txt .cat h2 {
 	text-align: center;

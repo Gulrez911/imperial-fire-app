@@ -176,7 +176,7 @@
 
 
 										<div class="more2">
-											<a href="/fire-suppression-system.html">...More</a>
+											<a href="#" onclick="window.location.href = ' /allProduct?id=${list.id} ' ">...More</a>
 										</div>
 									</div>
 								</div>

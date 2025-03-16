@@ -29,6 +29,8 @@ public class CategoryDTOController {
 		ModelAndView mav = new ModelAndView("admin");
 		List<CategoryDTO> dtos = new ArrayList<>();
 		List<Category> listCategories = categoryRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
+		
+//		List<Category> listCategories = categoryRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
 		for (Category category : listCategories) {
 //		category
 			List<Product> listProducts = productRepository.findProductByCategoryId(category.getId());

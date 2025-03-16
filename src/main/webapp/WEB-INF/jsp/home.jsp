@@ -58,7 +58,55 @@
 </head>
 <body>
 	
+<nav>
+		<div class="navbar">
 
+			<!-- <i class='bx bx-menu'></i> -->
+			<label for="check"> <i class='bx bx-menu' id="check"></i></label>
+			<!-- <input type="checkbox" id="check" name="check"> -->
+
+			<div class="logo">
+				<a href="#">CodingLab</a>
+			</div>
+			<div class="nav-links tempnav-links tempnav-links2" id="yourID">
+				<div class="sidebar-logo">
+					<span class="logo-name">CodingLab</span> <i class='bx bx-x'></i>
+				</div>
+				<ul class="links">
+					<li><a href="#">HOME</a></li>
+					<li class="links-li" id="productid_1"><a href="#" onclick="window.location.href = ' /home' "> Our Products</a> <i
+						class='bx bxs-chevron-down htmlcss-arrow arrow  temparrow'
+					></i>
+						<ul class="htmlCss-sub-menu sub-menu links2 show3 " id="list-100">
+							<c:forEach items="${dtos}" var="list">
+								<li class="more " id="category-100"><a href="#" onclick="window.location.href = ' /allProduct?id=${list.id} ' "> <!-- 								Body Protection -->
+										<!-- 										Wear --> ${list.categoryName}
+
+								</a><i class='bx bxs-chevron-right arrow more-arrow miniarrow'></i>
+									<ul class="more-sub-menu sub-menu" id="subcategory-100">
+										<c:forEach items="${list.listProduct}" var="listProduct">
+											<li><a href="#" onclick="return callProduct(${listProduct.id});">${listProduct.name}</a></li>
+										</c:forEach>
+									</ul></li>
+							</c:forEach>
+						</ul></li>
+					<li><a href="#" onclick="window.location.href = ' /companyProfile' "> Company Profile</a></li>
+
+					<li><a href="#">CONTACT US</a></li>
+				</ul>
+			</div>
+			<div class="search-box">
+				<i class='bx bx-search'></i>
+				<div class="input-box">
+					<input type="text" placeholder="Search...">
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</nav>
 
 
 	<div class="w3-content w3-section">

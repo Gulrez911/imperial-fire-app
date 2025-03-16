@@ -6,10 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.gul.common.PropertyConfig;
 
 @SpringBootApplication
+//@EnableScheduling
 //@PropertySource("classpath:config.properties")
  public class ImperialFireAppApplication {
 
