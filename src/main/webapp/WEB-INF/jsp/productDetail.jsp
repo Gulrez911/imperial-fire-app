@@ -69,28 +69,32 @@
 </head>
 <body>
      <nav>
-          <div class="navbar">
+		<div class="navbar">
 
 			<!-- <i class='bx bx-menu'></i> -->
-			<label for="check"> <i class='bx bx-menu' id="check"></i></label>
-			<!-- <input type="checkbox" id="check" name="check"> -->
+			<!-- 			<label for="check"> <i class='bx bx-menu' id="check2"></i></label> -->
 
+			
 			<div class="logo">
-				<a href="#">CodingLab</a>
+				<img alt="logo" src="./resourses/fire-images/logo.png"> 
+				<a href="#" style="display: none;">IMPERIAL FIRE & SAFETY SERVICES</a>
 			</div>
-			<div class="nav-links tempnav-links tempnav-links2" id="yourID">
+			<input type="checkbox" id="check" name="check" style="display: none;">
+			<label for="check"> <i class='bx bx-menu'></i></label>
+			<!-- 			<div class="nav-links tempnav-links tempnav-links2" id="yourID"> -->
+			<div class="nav-links">
 				<div class="sidebar-logo">
-					<span class="logo-name">CodingLab</span> <i class='bx bx-x'></i>
+					<span class="logo-name">IMPERIAL FIRE & SAFETY SERVICES</span> <label for="check"> <i class='bx bx-menu'></i></label>
 				</div>
 				<ul class="links">
 					<li><a href="#">HOME</a></li>
-					<li class="links-li" id="productid_1"><a href="#" onclick="window.location.href = ' /home' "> Our Products</a> <i
-						class='bx bxs-chevron-down htmlcss-arrow arrow  temparrow'
-					></i>
+					<li class="links-li" id="productid_1"><a href="#" onclick="window.location.href = ' /home' "> Our Products</a>
+						<i class='bx bxs-chevron-down htmlcss-arrow arrow  temparrow'></i>
 						<ul class="htmlCss-sub-menu sub-menu links2 show3 " id="list-100">
 							<c:forEach items="${dtos}" var="list">
-								<li class="more " id="category-100"><a href="#" onclick="window.location.href = ' /allProduct?id=${list.id} ' "> <!-- 								Body Protection -->
-										<!-- 										Wear --> ${list.categoryName}
+								<li class="more " id="category-100"><a href="#"
+									onclick="window.location.href = ' /allProduct?id=${list.id} ' "
+								> <!-- 								Body Protection --> <!-- 										Wear --> ${list.categoryName}
 
 								</a><i class='bx bxs-chevron-right arrow more-arrow miniarrow'></i>
 									<ul class="more-sub-menu sub-menu" id="subcategory-100">
@@ -100,23 +104,27 @@
 									</ul></li>
 							</c:forEach>
 						</ul></li>
-					<li><a href="#"> Company Profile</a></li>
+					<li><a href="#" onclick="window.location.href = ' /companyProfile' "> Company Profile</a></li>
 
 					<li><a href="#">CONTACT US</a></li>
 				</ul>
-			</div>
-			<div class="search-box">
+				<div class="search-box">
 				<i class='bx bx-search'></i>
 				<div class="input-box">
 					<input type="text" placeholder="Search...">
+
+
 				</div>
 			</div>
+			</div>
+			
+
 		</div>
 
 
 
 
-     </nav>
+	</nav>
 
      <div class="w4-2">
           <div class="inner_text_area">
@@ -885,8 +893,8 @@
 					<div id="inquiry_success_div" style="display: none;">
 						<div class="mcFormDetailCnt">
 							<div class="mcThanksCnt">
-								<img src="https://tiimg.tistatic.com/new_website1/ti-design/catalog/images/check.svg" alt="done">
-								<div class="mcThankTitle">Youre Done!</div>
+								<img src="./resourses/fire-images/check-mark.png" alt="done" style="width: 48px;height: 48px">
+								<div class="mcThankTitle">You are Done!</div>
 								<div class="mcThankSubTitle">We have received your requirements and will reply shortly with the best
 									price.</div>
 								<div class="mcProductYouLike">

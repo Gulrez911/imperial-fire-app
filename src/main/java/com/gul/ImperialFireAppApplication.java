@@ -1,27 +1,33 @@
 package com.gul;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.gul.common.PropertyConfig;
+import com.gul.service.MailService;
+import com.gul.service.MailServiceImpl;
 
 @SpringBootApplication
 //@EnableScheduling
 //@PropertySource("classpath:config.properties")
- public class ImperialFireAppApplication {
+public class ImperialFireAppApplication {
 
 	public static void main(String[] args) {
-		  SpringApplication.run(ImperialFireAppApplication.class, args);
+		SpringApplication.run(ImperialFireAppApplication.class, args);
 		System.out.println("sss");
 
- 
 	}
 
+//	@Bean
+//	PropertyConfig depClass() {
+//		return new PropertyConfig();
+//	}
+
+//	@Bean
+//	MailServiceImpl depClass2() {
+//		return new MailServiceImpl();
+//	}
 //	@Bean
 //	@ConditionalOnProperty(prefix = "my.property.prefix", name = "myProperty")
 //	public PropertyConfig myBean() {
@@ -36,7 +42,7 @@ import com.gul.common.PropertyConfig;
 //		return new PropertyConfig();
 //
 //	}
-	
+
 //	@Bean
 //	PropertyConfig config() {
 //		 

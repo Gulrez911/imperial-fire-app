@@ -12,18 +12,12 @@
 <title>Responsive Drop Down Navigation Menu | CodingLab</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!-- Boxicons CDN Link -->
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
-	rel='stylesheet'
->
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <!--                                         Bootstrap                               -->
 <!-- Latest compiled and minified CSS -->
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -37,50 +31,50 @@
 
 
 <script>
-          $(document).ready(function () {
-               $(".links-li").click(function () {
-                    // $("p").toggleClass("main");
-                    // alert("sss");
-                    // $(this).siblings(".links-li").toggle();
-                    // $(".show3").css("display", "block");
-                    // $(this).parent().find(".show3").fadeToggle();
-               });
+//           $(document).ready(function () {
+//                $(".links-li").click(function () {
+               
+//                });
 
-               $(".bx-x").click(function () {
-                    $(".nav-links").css("display", "none");
-               });
+//                $(".bx-x").click(function () {
+//                     $(".nav-links").css("display", "none");
+//                });
 
-               $("#check").click(function () {
-                    $(".nav-links").css("display", "block");
-               });
-          });
+//                $("#check").click(function () {
+//                     $(".nav-links").css("display", "block");
+//                });
+//           });
      </script>
 </head>
 <body>
-	
-<nav>
+
+	<nav>
 		<div class="navbar">
 
 			<!-- <i class='bx bx-menu'></i> -->
-			<label for="check"> <i class='bx bx-menu' id="check"></i></label>
-			<!-- <input type="checkbox" id="check" name="check"> -->
+			<!-- 			<label for="check"> <i class='bx bx-menu' id="check2"></i></label> -->
 
+			
 			<div class="logo">
-				<a href="#">CodingLab</a>
+				<img alt="logo" src="./resourses/fire-images/logo.png"> 
+				<a href="#" style="display: none;">IMPERIAL FIRE & SAFETY SERVICES</a>
 			</div>
-			<div class="nav-links tempnav-links tempnav-links2" id="yourID">
+			<input type="checkbox" id="check" name="check" style="display: none;">
+			<label for="check"> <i class='bx bx-menu'></i></label>
+			<!-- 			<div class="nav-links tempnav-links tempnav-links2" id="yourID"> -->
+			<div class="nav-links">
 				<div class="sidebar-logo">
-					<span class="logo-name">CodingLab</span> <i class='bx bx-x'></i>
+					<span class="logo-name">IMPERIAL FIRE & SAFETY SERVICES</span> <label for="check"> <i class='bx bx-menu'></i></label>
 				</div>
 				<ul class="links">
 					<li><a href="#">HOME</a></li>
-					<li class="links-li" id="productid_1"><a href="#" onclick="window.location.href = ' /home' "> Our Products</a> <i
-						class='bx bxs-chevron-down htmlcss-arrow arrow  temparrow'
-					></i>
+					<li class="links-li" id="productid_1"><a href="#" onclick="window.location.href = ' /home' "> Our Products</a>
+						<i class='bx bxs-chevron-down htmlcss-arrow arrow  temparrow'></i>
 						<ul class="htmlCss-sub-menu sub-menu links2 show3 " id="list-100">
 							<c:forEach items="${dtos}" var="list">
-								<li class="more " id="category-100"><a href="#" onclick="window.location.href = ' /allProduct?id=${list.id} ' "> <!-- 								Body Protection -->
-										<!-- 										Wear --> ${list.categoryName}
+								<li class="more " id="category-100"><a href="#"
+									onclick="window.location.href = ' /allProduct?id=${list.id} ' "
+								> <!-- 								Body Protection --> <!-- 										Wear --> ${list.categoryName}
 
 								</a><i class='bx bxs-chevron-right arrow more-arrow miniarrow'></i>
 									<ul class="more-sub-menu sub-menu" id="subcategory-100">
@@ -94,13 +88,17 @@
 
 					<li><a href="#">CONTACT US</a></li>
 				</ul>
+				
 			</div>
 			<div class="search-box">
-				<i class='bx bx-search'></i>
-				<div class="input-box">
-					<input type="text" placeholder="Search...">
+					<i class='bx bx-search'></i>
+					<div class="input-box">
+						<input type="text" placeholder="Search...">
+
+
+					</div>
 				</div>
-			</div>
+
 		</div>
 
 
@@ -108,26 +106,13 @@
 
 	</nav>
 
-
 	<div class="w3-content w3-section">
-		<img class="mySlides"
-			src="https://mdbootstrap.com/img/new/standard/nature/181.jpg"
-			style="display: none;"
-		> <img class="mySlides"
-			src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-			style="display: block;"
-		> <img class="mySlides"
-			src="https://mdbootstrap.com/img/new/standard/nature/183.jpg"
-			style="display: none;"
-		> <img class="mySlides"
-			src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-			style="display: none;"
-		> <img class="mySlides"
-			src="https://mdbootstrap.com/img/new/standard/nature/185.jpg"
-			style="display: none;"
-		> <a class="prev" onclick="plusSlides(-1)">❮</a> <a class="next"
-			onclick="plusSlides(1)"
-		>❯</a>
+		<img class="mySlides" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" style="display: none;"> <img
+			class="mySlides" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" style="display: block;"
+		> <img class="mySlides" src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" style="display: none;">
+		<img class="mySlides" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" style="display: none;"> <img
+			class="mySlides" src="https://mdbootstrap.com/img/new/standard/nature/185.jpg" style="display: none;"
+		> <a class="prev" onclick="plusSlides(-1)">❮</a> <a class="next" onclick="plusSlides(1)">❯</a>
 	</div>
 
 
@@ -153,9 +138,7 @@
 				</div>
 				<div class="main3 ">
 
-					<img
-						src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg"
-					>
+					<img src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg">
 					<h4>Carbon Dioxide Extinguisher</h4>
 
 
@@ -207,73 +190,16 @@
 			<div class="wrapper">
 				<i id="left" class="fa-solid  fas fa-angle-left"></i>
 				<ul class="carousel">
+					<c:forEach items="${listProducts}" var="list">
+						<li class="card">
+							<div class="img">
+								<img src="${'/image?img='}${list.imageName}" alt="" draggable="false">
+							</div>
+							<h4>${list.price}</h4> <!-- 						<h4 style="color: green; font-weight: bold;">Price 34234</h4> -->
 
-					<li class="card">
-						<div class="img">
-							<img
-								src="/resourses/fire-images/Dry Chemical Safety First Fire Extinguishers.jpg"
-								alt="" draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 34234</h4>
+						</li>
 
-					</li>
-					<li class="card">
-						<div class="img">
-							<img src="/resourses/fire-images/FE-Hands-On-Training-1536x1024.jpeg"
-								alt="" draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 4535</h4>
-
-					</li>
-					<li class="card">
-						<div class="img">
-							<img
-								src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg"
-								alt="" draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 6646</h4>
-
-					</li>
-					<li class="card">
-						<div class="img">
-							<img src="/resourses/fire-images/firepreventionblog.jpg" alt=""
-								draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 5646</h4>
-
-					</li>
-					<li class="card">
-						<div class="img">
-							<img src="/resourses/fire-images/Foam Fire Extinguisher.webp" alt=""
-								draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 455</h4>
-
-					</li>
-					<li class="card">
-						<div class="img">
-							<img src="/resourses/fire-images/Powder Extinguisher.jpg" alt=""
-								draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 34234</h4>
-
-					</li>
-					<li class="card">
-						<div class="img">
-							<img
-								src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg"
-								alt="" draggable="false"
-							>
-						</div>
-						<h4 style="color: green; font-weight: bold;">Price 3222</h4>
-
-					</li>
+					</c:forEach>
 				</ul>
 				<i id="right" class="fa-solid fas fa-angle-right"></i>
 			</div>
@@ -284,22 +210,16 @@
 
 			<div class="main4 ">
 				<div class="main-img">
-					<img
-						src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg"
-					>
+					<img src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg">
 
 				</div>
 				<div class="loc">
-					<p>Located at Malad West, Mumbai, Maharashtra, we, Safecare
-						Extinguishers, we help you understand fire risks and offer reliable fire
-						safety fire extinguishers and solutions to safeguard everything you love.
-						With the goal of empowering lives to safety, we provide various types of
-						fire extinguishers like water spray extinguisher, water mist extinguisher,
-						powder extinguisher, dry powder extinguisher, foam extinguisher, carbon
-						dioxide extinguisher.</p>
-					<p>We take pride in being experienced and reliable. Our company culture
-						rewards making things happen. Our ambition to be the very best makes sure
-						that we try harder to serve our customers better. We measure our success
+					<p>Located at Malad West, Mumbai, Maharashtra, we, Safecare Extinguishers, we help you understand fire risks
+						and offer reliable fire safety fire extinguishers and solutions to safeguard everything you love. With the goal of
+						empowering lives to safety, we provide various types of fire extinguishers like water spray extinguisher, water
+						mist extinguisher, powder extinguisher, dry powder extinguisher, foam extinguisher, carbon dioxide extinguisher.</p>
+					<p>We take pride in being experienced and reliable. Our company culture rewards making things happen. Our
+						ambition to be the very best makes sure that we try harder to serve our customers better. We measure our success
 						by the positive impact we have on people's lives.</p>
 				</div>
 
@@ -323,17 +243,13 @@
 				</div>
 				<div class="main33 ">
 
-					<img
-						src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg"
-					>
+					<img src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg">
 
 
 				</div>
 				<div class="main33 ">
 
-					<img
-						src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg"
-					>
+					<img src="/resourses/fire-images/Fire-Suppration-System-Solution-In-Bangladesh-by-Extensive.jpg">
 
 
 				</div>
@@ -356,8 +272,7 @@
 			</div>
 
 			<div class="deck2">
-				<p class="p1">Their quality of fire extinguishers are exceptionally
-					good.</p>
+				<p class="p1">Their quality of fire extinguishers are exceptionally good.</p>
 				<p class="p2">Imran Tauseef</p>
 			</div>
 		</div>
@@ -372,8 +287,7 @@
 					<ul>
 						<li>
 							<h3>Our Office Address</h3>
-							<p>Office 36, 2nd Floor, Building No A1, Mm City, Shil Phata,Thane -
-								400612, Maharashtra, India</p>
+							<p>Office 36, 2nd Floor, Building No A1, Mm City, Shil Phata,Thane - 400612, Maharashtra, India</p>
 						</li>
 						<li>
 							<h3>General Enquiries</h3>
@@ -400,14 +314,10 @@
 							<input type="email" placeholder="EMAIL" class="form__input" id="email" />
 						</div>
 						<div class="inp">
-							<input type="number" placeholder="CONTACT NO." class="form__input"
-								id="subject"
-							/>
+							<input type="number" placeholder="CONTACT NO." class="form__input" id="subject" />
 						</div>
 						<div class="inp">
-							<textarea type="text" placeholder="MESSAGE" class="form__input"
-								id="subject"
-							></textarea>
+							<textarea type="text" placeholder="MESSAGE" class="form__input" id="subject"></textarea>
 						</div>
 						<div class="sub">
 							<input type="submit" name="submit" />
@@ -424,8 +334,8 @@
 			<div class="map-div">
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1884.5157475858805!2d73.03639306975!3d19.1500986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bf003c0d9c2d%3A0x766ac1c70d67b9fc!2sMM%20CITY%2C%20A%2F1!5e0!3m2!1sen!2sin!4v1740830493183!5m2!1sen!2sin"
-					width="100%" height="650" style="border: 0;" allowfullscreen=""
-					loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+					width="100%" height="650" style="border: 0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
 				></iframe>
 			</div>
 		</div>
@@ -434,9 +344,7 @@
 			<!-- Footer -->
 			<footer class="text-center text-lg-start bg-body-tertiary text-muted">
 				<!-- Section: Social media -->
-				<section
-					class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-				>
+				<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 					<!-- Left -->
 					<div class="me-5 d-none d-lg-block">
 						<span>Get connected with us on social networks:</span>
@@ -463,9 +371,7 @@
 
 				<!-- Copyright -->
 				<div class="text-center">
-					© 2025 Copyright: <a class="text-reset fw-bold"
-						href="https://www.imperialsafetyservices.com/"
-					>imperialsafetyservices.com</a>
+					© 2025 Copyright: <a class="text-reset fw-bold" href="https://www.imperialsafetyservices.com/">imperialsafetyservices.com</a>
 				</div>
 				<!-- Copyright -->
 			</footer>
@@ -484,66 +390,8 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script>
-          $(window).resize(function (e) {
-               screen_resize();
-          });
-          function screen_resize() {
-               var h = parseInt(window.innerHeight);
-               var w = parseInt(window.innerWidth);
-
-               if (w <= 800) {
-                    //max-width 500px
-                    // actions here...
-                    rotateX();
-               } else {
-                    // 850px and beyond
-                    // actions here...
-                    rotateY();
-               }
-
-          }
-
-          function rotateX() {
-               console.log("sssss");
-               // $("p:first").addClass("intro");
-               // $(".nav-links").css("display", "none");
-               if ($('.arrow').hasClass('temparrow')) {
-                    // clearInterval(classListener);
-                    //Do your work here or
-                    // doWorkFunctionCall();
-
-                    // $(".arrow").removeClass("temparrow");
-               }
-
-
-               if ($('.nav-links').hasClass('tempnav-links')) {
-                    $(".nav-links").addClass("tempnav-links");
-               }
-
-               if ($('#yourID').css('display') == 'none') {
-                    $(".nav-links").css("display", "block");
-               }
-
-          } function rotateY() {
-               console.log("yyyyyyyyyy");
-               // $("p:first").removeClass("intro");
-
-               if (!$('.arrow').hasClass('temparrow')) {
-                    // clearInterval(classListener);
-                    //Do your work here or
-                    // doWorkFunctionCall();
-
-                    $(".arrow").addClass("temparrow");
-               }
-
-               if (!$('.nav-links').hasClass('tempnav-links')) {
-                    // clearInterval(classListener);
-                    //Do your work here or
-                    // doWorkFunctionCall();
-
-                    $(".nav-links").removeClass("tempnav-links");
-               }
-          }
+        
+          
           // arrow  temparrow
           // list-100
 

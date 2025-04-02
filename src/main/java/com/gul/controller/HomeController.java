@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,8 +16,6 @@ import java.util.Random;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -83,7 +83,9 @@ public class HomeController {
 			}
 
 		}
-
+		List<Product> listProducts = productRepository.findAll();
+		System.out.println(listProducts);
+		mav.addObject("listProducts", listProducts);
 		mav.addObject("dtos", dtos);
 		return mav;
 	}
@@ -308,15 +310,13 @@ public class HomeController {
 			map.put("check", "true");
 			map.put("email", email2);
 
- 
-
 			String productName = (String) session.getAttribute("productName");
 			Long productId = (Long) session.getAttribute("productId");
 			Integer quantity = (Integer) session.getAttribute("quantity");
 			String additionalDetail = (String) session.getAttribute("additionalDetail");
 			String userEmail = (String) session.getAttribute("userEmail");
 			Long phone = (Long) session.getAttribute("phone");
-			
+
 			RequirementPorduct requirementPorduct = new RequirementPorduct();
 			requirementPorduct.setProductName(productName);
 			requirementPorduct.setProductId(productId);
@@ -326,6 +326,30 @@ public class HomeController {
 			requirementPorduct.setPhone(phone);
 
 			requirementPorductRepository.save(requirementPorduct);
+
+			// send product requirements details to mail
+			Mail mail = new Mail();
+			mail.setMailFrom("gulfarooqui1@gmail.com");
+			mail.setMailTo(email2);
+			mail.setMailSubject("Otp");
+
+			String loction = propertyConfig.getRequirementProductHtmlLocation();
+			String html = FileUtils.readFileToString(new File(loction),
+					StandardCharsets.UTF_8.name());
+
+			html = html.replace("{productName}", productName);
+			Date date = new Date();
+			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			formatter = new SimpleDateFormat("dd MMMM yyyy");
+			String reqDate = formatter.format(date);
+			html = html.replace("{date}", reqDate);
+			html = html.replace("{quantity}", quantity.toString());
+			html = html.replace("{additionalDetail}", additionalDetail);
+			html = html.replace("{userEmail}", userEmail);
+			html = html.replace("{phone}", phone.toString());
+
+			mail.setMailContent(html);
+			mailService.sendEmail(mail);
 
 		} else {
 			map.put("check", "false");

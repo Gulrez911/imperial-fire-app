@@ -9,7 +9,8 @@ import lombok.Data;
 
 @Data
 @Component
-@Configuration
+//@Configuration
+//@Service
 @PropertySource(value = "classpath:config.properties")
 public class PropertyConfig {
 
@@ -32,5 +33,8 @@ public class PropertyConfig {
 	
 	@Value("${image.otpHtmlLcation}")
 	String otpHtmlLcation;
+	
+	@Value("${image.requirementProductHtmlLocation}")
+	String requirementProductHtmlLocation;
 
 }

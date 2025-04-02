@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -164,11 +165,21 @@ public class ProductController {
 		}
 
 		if (product.getId() == null) {
+			 
+				product.setCreateDate(new Date());
+			 
 			productRepository.save(product);
 			mav.addObject("message", "Product Created");// later put it as label
 			mav.addObject("msgtype", "Success");
 			mav.addObject("icon", "success");
 		} else {
+			
+			 
+				Optional<Product> proOptional= productRepository.findById(product.getId());
+				product.setCreateDate(proOptional.get().getCreateDate());
+				product.setUpdateDate(new Date());
+			 
+			
 			productRepository.save(product);
 			mav.addObject("message", "Product Updated");// later put it as label
 			mav.addObject("msgtype", "Success");

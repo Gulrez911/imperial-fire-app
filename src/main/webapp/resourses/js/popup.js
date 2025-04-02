@@ -19,6 +19,8 @@ function callRequest(prd_name,prd_img,prd_id) {
     $('#prod_name').text(prd_name);
     $('#prod_image').attr('src',prd_img);
     $('#product_id').text(prd_id);
+    var pr =  $('#product_id').text(prd_id) ;
+    console.log(  pr    );
    }
    
    function set_send_enquiry(data) {

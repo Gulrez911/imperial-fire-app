@@ -1,5 +1,7 @@
 package com.gul.modal;
 
+import java.util.Date;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +25,8 @@ public class Product {
 	@Column(length = 128, nullable = false, unique = true)
 	private String name;
 
+	Date createDate;
+	Date updateDate;
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
 	private Category category;

@@ -73,15 +73,19 @@
 		<div class="navbar">
 
 			<!-- <i class='bx bx-menu'></i> -->
-			<label for="check"> <i class='bx bx-menu' id="check"></i></label>
-			<!-- <input type="checkbox" id="check" name="check"> -->
+			<!-- 			<label for="check"> <i class='bx bx-menu' id="check2"></i></label> -->
 
+			
 			<div class="logo">
-				<a href="#">CodingLab</a>
+				<img alt="logo" src="./resourses/fire-images/logo.png"> 
+				<a href="#" style="display: none;">IMPERIAL FIRE & SAFETY SERVICES</a>
 			</div>
-			<div class="nav-links tempnav-links tempnav-links2" id="yourID">
+			<input type="checkbox" id="check" name="check" style="display: none;">
+			<label for="check"> <i class='bx bx-menu'></i></label>
+			<!-- 			<div class="nav-links tempnav-links tempnav-links2" id="yourID"> -->
+			<div class="nav-links">
 				<div class="sidebar-logo">
-					<span class="logo-name">CodingLab</span> <i class='bx bx-x'></i>
+					<span class="logo-name">IMPERIAL FIRE & SAFETY SERVICES</span> <label for="check"> <i class='bx bx-menu'></i></label>
 				</div>
 				<ul class="links">
 					<li><a href="#">HOME</a></li>
@@ -101,17 +105,21 @@
 									</ul></li>
 							</c:forEach>
 						</ul></li>
-					<li><a href="#"> Company Profile</a></li>
+					<li><a href="#" onclick="window.location.href = ' /companyProfile' "> Company Profile</a></li>
 
 					<li><a href="#">CONTACT US</a></li>
 				</ul>
-			</div>
-			<div class="search-box">
+				<div class="search-box">
 				<i class='bx bx-search'></i>
 				<div class="input-box">
 					<input type="text" placeholder="Search...">
+
+
 				</div>
 			</div>
+			</div>
+			
+
 		</div>
 
 
@@ -135,7 +143,9 @@
 
 
 								<div class="prod">
-									<h2 title="Tube Fire Suppression System" onclick="window.location.href = ' /productDetail?productId=${list.id}' ">
+									<h2 title="Tube Fire Suppression System"
+										onclick="window.location.href = ' /productDetail?productId=${list.id}' "
+									>
 										<a href="#"> ${list.name} </a>
 
 									</h2>
@@ -295,23 +305,22 @@
 								<div class="mcCol2">
 									<div class="mcFormCnt">
 										<span class="input-group-addon"><span class="fa fa-phone"></span></span> <input type="tel" name="phone"
-											id="phone" placeholder="(555) 555-5555" autocomplete="tel" maxlength="14"
-											 required
+											id="phone" placeholder="(555) 555-5555" autocomplete="tel" maxlength="14" required
 										/>
 
-<!-- <span class="input-group-addon"><span class="fa fa-phone"></span></span> <input type="tel" name="phone" -->
-<!-- 											id="phone" placeholder="(555) 555-5555" autocomplete="tel" maxlength="14" -->
-<!-- 											pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}" required -->
-<!-- 										/> -->
+										<!-- <span class="input-group-addon"><span class="fa fa-phone"></span></span> <input type="tel" name="phone" -->
+										<!-- 											id="phone" placeholder="(555) 555-5555" autocomplete="tel" maxlength="14" -->
+										<!-- 											pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}" required -->
+										<!-- 										/> -->
 
 									</div>
 									<div class="mcFormCnt">
-<!-- 										<div class="mcFormCnt"> -->
-											<input type="email" id="inquiry_email" name="email" value="" required="required" placeholder="Email">
-											<!-- 									<span class="mcFloatingLabel">Email</span> -->
-<!-- 										</div> -->
+										<!-- 										<div class="mcFormCnt"> -->
+										<input type="email" id="inquiry_email" name="email" value="" required="required" placeholder="Email">
+										<!-- 									<span class="mcFloatingLabel">Email</span> -->
+										<!-- 										</div> -->
 										<p class="formError" id="inquiry_email_error" style="display: none;"></p>
-<!-- 										<input type="hidden" id="logged_in" name="email" value="0" required=""> -->
+										<!-- 										<input type="hidden" id="logged_in" name="email" value="0" required=""> -->
 									</div>
 
 								</div>
@@ -346,7 +355,7 @@
 							<div class="errorText global_quick_inquiry_error" style="display: none;"></div>
 							<div class="successText global_quick_inquiry_success" style="display: none;"></div>
 							<div class="mcBtnCnt">
-								<input type="submit" value="Submit Now" class="mcBtn" >
+								<input type="submit" value="Submit Now" class="mcBtn">
 								<!-- 							onclick="validate_inquiery_form();" -->
 							</div>
 						</div>
@@ -373,11 +382,10 @@
 							</div>
 
 							<div class="mcBtnCnt">
-								<input type="submit" value="Confirm Requirement" class="mcBtn" 
-								 onclick=" otp_validation_btn();  "
+								<input type="submit" value="Confirm Requirement" class="mcBtn" onclick=" otp_validation_btn();  "
 									id="otp_validation_btn"
 								>
-<!-- 								onclick=" otp_validation_btn();  " -->
+								<!-- 								onclick=" otp_validation_btn();  " -->
 							</div>
 						</div>
 					</div>
@@ -386,8 +394,9 @@
 					<div id="inquiry_success_div" style="display: none;">
 						<div class="mcFormDetailCnt">
 							<div class="mcThanksCnt">
-								<img src="https://tiimg.tistatic.com/new_website1/ti-design/catalog/images/check.svg" alt="done">
-								<div class="mcThankTitle">Youre Done!</div>
+								<img src="./resourses/fire-images/check-mark.png" alt="done" style="width: 48px; height: 48px">
+
+								<div class="mcThankTitle">You are Done!</div>
 								<div class="mcThankSubTitle">We have received your requirements and will reply shortly with the best
 									price.</div>
 								<div class="mcProductYouLike">

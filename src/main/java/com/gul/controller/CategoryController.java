@@ -1,5 +1,6 @@
 package com.gul.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,6 +52,13 @@ public class CategoryController {
 	@PostMapping("saveCategory")
 	public ModelAndView saveCategory(@ModelAttribute("category") Category category) {
 		ModelAndView mav = new ModelAndView("categoryList");
+		if(category.getId()==null) {
+			category.setCreateDate(new Date());
+		}else {
+			Optional<Category> category2 = repo.findById(category.getId());
+			category.setCreateDate(category2.get().getCreateDate());
+			category.setUpdateDate(new Date());
+		}
 		repo.save(category);
 		List<Category> listCategories = repo.findAll();
 		mav.addObject("listCategories", listCategories);

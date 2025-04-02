@@ -1,12 +1,16 @@
 package com.gul.modal;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 @Entity
+@Data
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +19,8 @@ public class Category {
 	@Column(length = 45, nullable = false, unique = true)
 	private String name;
 
+	Date createDate;
+	Date updateDate;
 	public Category() {
 
 	}

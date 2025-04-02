@@ -27,6 +27,7 @@ body {
 		<h2>Category Form</h2>
 		<form:form action="saveCategory" modelAttribute="category" method="post">
 		<form:hidden path="id" />
+		
 			<div class="mb-3 mt-3">
 				<label>Category Name :</label> <input type="text" class="form-control"
 					placeholder="Enter Category Name" name="name" value="${category.name}"
